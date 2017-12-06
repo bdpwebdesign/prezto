@@ -1,1 +1,24 @@
-/home/bdp/code/notes/.dotfiles/zsh/.zshrc
+# ZSH CUSTOMIZATION
+
+# set options
+export TERM="xterm-256color"
+export EDITOR="subl -w"
+export TIMEFMT=$'\n\e[0;37m%J\n\e[1;35mreal\e[00m %*Es\t\e[1;35musr\e[00m %*Us\t\e[1;35msys\e[00m %*Ss\t\e[1;35mcpu\e[00m %P'
+export DOTFILES=$HOME/code/notes/.dotfiles
+
+# platform specific
+declare -U path
+if [[ $OSTYPE == darwin* ]]; then
+	export GPG_TTY=$(tty)
+	test -e $HOME/.iterm2_shell_integration.zsh && source $HOME/.iterm2_shell_integration.zsh
+	path=($HOME/code/*/vendor/bin $HOME/.composer/vendor/bin /usr/local/bin /usr/local/sbin $path)
+else
+	path=($HOME/.cargo/bin $HOME/.java/jre1.8.0_144/bin $HOME/.worksnaps/bin $path)
+fi
+export PATH
+
+# load files
+source $DOTFILES/zsh/prezto/init.zsh
+source $DOTFILES/zsh/aliases
+source $DOTFILES/zsh/zle.zsh
+source $DOTFILES/zsh/functions/global.zsh

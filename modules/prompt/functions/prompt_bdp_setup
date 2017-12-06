@@ -29,11 +29,12 @@ function prompt_bdp_setup {
 		'status' '%C%A%B%m%a%d%r%U%u%S'
 
 	# define prompts
-	PROMPT='%B%(?.%F{green}.%F{red})➜ ${italic}%F{cyan}%1~${(e)git_info[prompt]}[23m${git_info[status]}%f%b '
-	[[ ! $RPROMPT ]] && RPROMPT='%B%(?:: %F{red}✘ %?)%f%b'
+	return_status='%(?.%F{green}.%F{red})➜ '
+	PROMPT='%B${return_status}%{$italic%}%F{cyan}%1~${(e)git_info[prompt]}%{$no_italic%}${git_info[status]}%f%b '
+	RPROMPT='%(?:: %B%F{red}⚑ %?%f%b)'
 	SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
-	PROMPT2="%B%F{magenta}%_%f%b❯ "
-	PROMPT3="%B%F{blue}Selection%f%b❯ "
+	PROMPT2='%B%F{magenta}%_%f%b❯ '
+	PROMPT3='%B%F{blue}Selection%f%b❯ '
 }
 
 prompt_bdp_setup "$@"
