@@ -20,6 +20,7 @@ zstyle ':prezto:load' pmodule \
 	'completion' \
 	'prompt' \
 	'git' \
+	'osx' \
 	'autosuggestions' \
 	'syntax-highlighting' \
 	'history-substring-search'

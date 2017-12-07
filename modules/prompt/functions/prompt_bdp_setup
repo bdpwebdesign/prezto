@@ -1,7 +1,9 @@
 # BDP THEME
 
 function prompt_bdp_precmd {
-	git-info
+	if (( $+functions[git-info] )); then
+		git-info
+	fi
 }
 
 function prompt_bdp_setup {
@@ -11,10 +13,13 @@ function prompt_bdp_setup {
 	autoload -Uz add-zsh-hook
 	add-zsh-hook precmd prompt_bdp_precmd
 
+	# set editor-info parameters
+	zstyle ':prezto:module:editor:info:completing' format '%F{whit}......%f'
+
 	# set git-info parameters
 	zstyle ':prezto:module:git:info' verbose 'yes'
 	zstyle ':prezto:module:git:info:branch' format ' %F{green}%b'
-	zstyle ':prezto:module:git:info:action' format ' %B%F{yellow}%s!'
+	zstyle ':prezto:module:git:info:action' format ' %B%F{red}%s'
 	zstyle ':prezto:module:git:info:clean' format ' %F{green}✔'
 	zstyle ':prezto:module:git:info:ahead' format ' %F{green}⬆'
 	zstyle ':prezto:module:git:info:behind' format ' %F{red}⬇'
@@ -33,8 +38,8 @@ function prompt_bdp_setup {
 	# define prompts
 	return_status='%(?.%F{green}.%F{red})➜ '
 	PROMPT='%B${return_status}%{$italic%}%F{cyan}%1~${git_info[branch]}%{$no_italic%}${git_info[status]}%f%b '
-	RPROMPT='%(?:: %B%F{red}⚑ %?%f%b)'
-	RPROMPT+='%{$italic%}${git_info[action]}%{$reset%}'
+	RPROMPT='%(?:: %B%F{yellow}⚑ %?%f%b)'
+	RPROMPT+='${git_info[action]}%{$reset%}'
 	SPROMPT='%F{magenta}%R%f ⟹   %F{green}%r%f [nyae]? '
 	PROMPT2='%B%F{magenta}%_%f%b❯ '
 	PROMPT3='%B%F{blue}Selection%f%b❯ '
