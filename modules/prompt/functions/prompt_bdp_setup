@@ -1,4 +1,4 @@
-# my theme
+# BDP THEME
 
 function prompt_bdp_precmd {
 	git-info
@@ -14,6 +14,7 @@ function prompt_bdp_setup {
 	# set git-info parameters
 	zstyle ':prezto:module:git:info' verbose 'yes'
 	zstyle ':prezto:module:git:info:branch' format ' %F{green}%b'
+	zstyle ':prezto:module:git:info:action' format ' %B%F{yellow}%s!'
 	zstyle ':prezto:module:git:info:clean' format ' %F{green}✔'
 	zstyle ':prezto:module:git:info:ahead' format ' %F{green}⬆'
 	zstyle ':prezto:module:git:info:behind' format ' %F{red}⬇'
@@ -25,14 +26,16 @@ function prompt_bdp_setup {
 	zstyle ':prezto:module:git:info:untracked' format ' %F{magenta}?'
 	zstyle ':prezto:module:git:info:stashed' format ' %F{blue}$'
 	zstyle ':prezto:module:git:info:keys' format \
-		'prompt' '$(coalesce "%b")' \
-		'status' '%C%A%B%m%a%d%r%U%u%S'
+		'branch' '%b' \
+		'status' '%C%A%B%m%a%d%r%U%u%S' \
+		'action' '%s'
 
 	# define prompts
 	return_status='%(?.%F{green}.%F{red})➜ '
-	PROMPT='%B${return_status}%{$italic%}%F{cyan}%1~${(e)git_info[prompt]}%{$no_italic%}${git_info[status]}%f%b '
+	PROMPT='%B${return_status}%{$italic%}%F{cyan}%1~${git_info[branch]}%{$no_italic%}${git_info[status]}%f%b '
 	RPROMPT='%(?:: %B%F{red}⚑ %?%f%b)'
-	SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+	RPROMPT+='%{$italic%}${git_info[action]}%{$reset%}'
+	SPROMPT='%F{magenta}%R%f ⟹   %F{green}%r%f [nyae]? '
 	PROMPT2='%B%F{magenta}%_%f%b❯ '
 	PROMPT3='%B%F{blue}Selection%f%b❯ '
 }
