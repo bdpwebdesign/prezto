@@ -1,14 +1,13 @@
-# PREZTO OPTIONS
+# ZPREZTORC
+#
+# This file configures Prezto.
+#
 
-# General
-
-# Color output (auto set to 'no' on dumb terminals).
+# color output
 zstyle ':prezto:*:*' color 'yes'
-
-# Set the Zsh modules to load (man zshmodules).
+# zsh modules
 zstyle ':prezto:load' zmodule 'datetime'
-
-# Set the Prezto modules to load in order (browse modules).
+# prezto modules (order matters)
 zstyle ':prezto:load' pmodule \
 	'environment' \
 	'terminal' \
@@ -20,55 +19,27 @@ zstyle ':prezto:load' pmodule \
 	'completion' \
 	'prompt' \
 	'git' \
-	'osx' \
 	'autosuggestions' \
 	'syntax-highlighting' \
 	'history-substring-search'
 
-# Autosuggestions
+# autosuggestions
+zstyle ':prezto:module:autosuggestions:color' found 'fg=black'
 
-# Set the query found color.
-zstyle ':prezto:module:autosuggestions:color' found 'fg=white'
-
-# Editor
-
-# Set the key mapping style to 'emacs' or 'vi'.
+# editor
 zstyle ':prezto:module:editor' key-bindings 'emacs'
-
-# Auto convert .... to ../..
 zstyle ':prezto:module:editor' dot-expansion 'yes'
 
-# History Substring Search
-
-# Set the query found color.
+# history substring search
 zstyle ':prezto:module:history-substring-search:color' found 'fg=green'
-
-# Set the query not found color.
 zstyle ':prezto:module:history-substring-search:color' not-found 'fg=magenta'
 
-# Set the search globbing flags.
-# zstyle ':prezto:module:history-substring-search' globbing-flags ''
-
-# OS X
-
-# Set the keyword used by `mand` to open man pages in Dash.app
-zstyle ':prezto:module:osx:man' dash-keyword 'manpages'
-
-# Prompt
-
-# Set the prompt theme to load.
+# prompt
 zstyle ':prezto:module:prompt' theme 'bdp'
 
-# Syntax Highlighting
-
-# Set syntax highlighters.
-# By default, only the main highlighter is enabled.
-zstyle ':prezto:module:syntax-highlighting' highlighters \
-	'main' \
-	'brackets' \
-	'pattern'
-
-# Set syntax highlighting styles.
+# syntax highlighting
+zstyle ':prezto:module:syntax-highlighting' highlighters 'main' 'brackets' 'pattern'
+zstyle ':prezto:module:syntax-highlighting' pattern 'sudo|rm' 'fg=red,bold,underline'
 zstyle ':prezto:module:syntax-highlighting' styles \
 	'main' 'none' \
 	'builtin' 'fg=magenta' \
@@ -86,19 +57,9 @@ zstyle ':prezto:module:syntax-highlighting' styles \
 	'bracket-level-1' 'fg=cyan,bold' \
 	'bracket-level-2' 'fg=cyan,bold' \
 	'cursor-matchingbracket' 'fg=green,bold'
-	# 'default' 'none'
 
-# Set syntax pattern styles.
-zstyle ':prezto:module:syntax-highlighting' pattern \
-  'sudo|rm' 'fg=red,bold,underline'
-
-# Terminal
-
-# Auto set the tab and window titles.
+# terminal
 zstyle ':prezto:module:terminal' auto-title 'yes'
 
-# Utility
-
-# Enabled safe options.
-# This aliases cp, ln, mv and rm so that they prompt before deleting or overwriting files.
-zstyle ':prezto:module:utility' safe-ops 'yes'
+# utility
+zstyle ':prezto:module:utility' safe-ops 'no'
