@@ -14,7 +14,7 @@ function prompt_bdp_setup {
 	add-zsh-hook precmd prompt_bdp_precmd
 
 	# set editor-info parameters
-	zstyle ':prezto:module:editor:info:completing' format '%F{whit}......%f'
+	zstyle ':prezto:module:editor:info:completing' format '...'
 
 	# set git-info parameters
 	zstyle ':prezto:module:git:info' verbose 'yes'

@@ -1,22 +1,29 @@
-# ZSH CUSTOMIZATION
+# ZSHRC
+#
+# This file is sourced by interactive shells.
+# It should define aliases, functions, shell options, and key bindings.
+#
 
 # set options
-export TERM="xterm-256color"
-export EDITOR="subl -w"
-export TIMEFMT=$'\n\e[0;37m%J\n\e[1;35mreal\e[00m %*Es\t\e[1;35musr\e[00m %*Us\t\e[1;35msys\e[00m %*Ss\t\e[1;35mcpu\e[00m %P'
 export DOTFILES=$HOME/code/notes/.dotfiles
+# export ZDOTDIR=$DOTFILES/zsh
+export EDITOR='subl -w'
+export VISUAL='subl -w'
+export PAGER='less'
+export LESS='-F -g -i -M -R -S -w'
+export TIMEFMT=$'\n\e[0;37m%J\n\e[1;35mreal\e[00m %*Es\t\e[1;35musr\e[00m %*Us\t\e[1;35msys\e[00m %*Ss\t\e[1;35mcpu\e[00m %P'
+typeset -gU cdpath fpath mailpath path
 
 # platform specific
-declare -U path
 if [[ $OSTYPE == darwin* ]]; then
 	export GPG_TTY=$(tty)
 	test -e $HOME/.iterm2_shell_integration.zsh && source $HOME/.iterm2_shell_integration.zsh
-	path=($HOME/code/*/vendor/bin $HOME/.composer/vendor/bin /usr/local/bin /usr/local/sbin $path)
+	path=(/usr/local/{bin,sbin} $path)
 else
 	path=($HOME/.cargo/bin $HOME/.java/jre1.8.0_144/bin $HOME/.worksnaps/bin $path)
 fi
-export PATH
 
+# export PATH
 # load files
 source $DOTFILES/zsh/prezto/init.zsh
 source $DOTFILES/zsh/aliases
