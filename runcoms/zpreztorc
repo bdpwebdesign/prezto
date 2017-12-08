@@ -71,7 +71,7 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
 	'main' 'none' \
-	'builtin' 'fg=red' \
+	'builtin' 'fg=magenta' \
 	'command' 'none' \
 	'unknown-token' 'none' \
 	'alias' 'fg=green' \
