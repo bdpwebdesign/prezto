@@ -1,4 +1,8 @@
 # BDP THEME
+#
+# My custom theme that displays toplevel of current working directory
+# and current git information.
+#
 
 function prompt_bdp_precmd {
 	if (( $+functions[git-info] )); then
