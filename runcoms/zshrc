@@ -2,34 +2,20 @@
 #
 # This file is sourced by interactive shells.
 # It should define aliases, functions, shell options, and key bindings.
-#
 
 # set options
-export DOTFILES=$HOME/code/notes/.dotfiles
-# export ZDOTDIR=$DOTFILES/zsh
 export EDITOR='subl -w'
 export VISUAL='subl -w'
 export PAGER='less'
 export LESS='-F -g -i -M -R -S -w'
 export TIMEFMT=$'\n\e[0;37m%J\n\e[1;35mreal\e[00m %*Es\t\e[1;35musr\e[00m %*Us\t\e[1;35msys\e[00m %*Ss\t\e[1;35mcpu\e[00m %P'
-
-# fpath
-declare -gU fpath
-fpath=($DOTFILES/zsh/functions/autoload $fpath)
+export DOTFILES=$HOME/code/notes/.dotfiles
 # path=($HOME/.cargo/bin $HOME/.java/jre1.8.0_144/bin $HOME/.worksnaps/bin $path)
 
-# iterm
+# load files
 test -e $HOME/.iterm2_shell_integration.zsh && \
 source $HOME/.iterm2_shell_integration.zsh
-
-# load files
 source $DOTFILES/zsh/prezto/init.zsh
 source $DOTFILES/zsh/aliases
 source $DOTFILES/zsh/zle.zsh
 source $DOTFILES/zsh/functions/global.zsh
-
-# autoload functions
-auto_fns=($DOTFILES/zsh/functions/autoload/*)
-for auto_fn in $auto_fns; do
-	autoload -Uz ${auto_fn##*/}
-done
