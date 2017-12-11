@@ -1,12 +1,15 @@
 # ZPREZTORC
 #
 # This file configures Prezto.
-#
 
 # color output
 zstyle ':prezto:*:*' color 'yes'
+# additional prezto modules
+# zstyle ':prezto:load' pmodule-dirs '/Users/bdp/code/notes/.dotfiles/zsh/autoload'
 # zsh modules
 zstyle ':prezto:load' zmodule 'datetime'
+# zsh functions
+# zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 # prezto modules (order matters)
 zstyle ':prezto:load' pmodule \
 	'environment' \
