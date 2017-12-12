@@ -31,7 +31,7 @@ function prompt_bdp_setup {
 	zstyle ':prezto:module:git:info:added' format ' %F{green}✚'
 	zstyle ':prezto:module:git:info:renamed' format ' %F{cyan}↺'
 	zstyle ':prezto:module:git:info:deleted' format ' %F{red}✖'
-	zstyle ':prezto:module:git:info:unmerged' format ' %F{magenta}═'
+	zstyle ':prezto:module:git:info:unmerged' format ' %F{magenta}❂'
 	zstyle ':prezto:module:git:info:untracked' format ' %F{magenta}?'
 	zstyle ':prezto:module:git:info:stashed' format ' %F{blue}$'
 	zstyle ':prezto:module:git:info:keys' format \
