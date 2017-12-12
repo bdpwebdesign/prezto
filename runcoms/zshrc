@@ -23,7 +23,7 @@ source $DOTFILES/zsh/zle.zsh
 for fn_dir in $DOTFILES/zsh/functions/*; do
 	if [[ -d $fn_dir ]]; then
 		zwc="${fn_dir}/${fn_dir:t}.zwc"
-		zcompile -Uz $zwc $fn_dir/*
+		zcompile -Uz $zwc $fn_dir/^*.zwc
 		fpath=($zwc $fpath) # fpath=($fn_dir $fpath)
 		autoload -Uwz $zwc # for fn ($fn_dir/*) autoload -Uz $fn(:t)
 	fi
