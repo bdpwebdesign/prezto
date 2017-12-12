@@ -19,9 +19,12 @@ source $DOTFILES/zsh/prezto/init.zsh
 source $DOTFILES/zsh/aliases
 source $DOTFILES/zsh/zle.zsh
 
+# move this to functions/init.zsh?
 for fn_dir in $DOTFILES/zsh/functions/*; do
 	if [[ -d $fn_dir ]]; then
-		fpath=($fn_dir $fpath)
-		for fn ($fn_dir/*) autoload -Uz $fn(:t)
+		zwc="${fn_dir}/${fn_dir:t}.zwc"
+		zcompile -Uz $zwc $fn_dir/*
+		fpath=($zwc $fpath) # fpath=($fn_dir $fpath)
+		autoload -Uwz $zwc # for fn ($fn_dir/*) autoload -Uz $fn(:t)
 	fi
-done
+done; unset fn_dir zwc
