@@ -13,12 +13,12 @@ zstyle ':prezto:load' pmodule \
 	'directory' \
 	'colors' \
 	'utility' \
+	'completion' \
 	'prompt' \
 	'git' \
 	'autosuggestions' \
 	'syntax-highlighting' \
 	'history-substring-search' \
-	'completion' \
 
 # autosuggestions
 zstyle ':prezto:module:autosuggestions:color' found 'fg=black'

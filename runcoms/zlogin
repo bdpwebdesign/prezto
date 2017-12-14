@@ -3,6 +3,8 @@
 # This file is sourced by login shells after zshrc.
 # It should contain commands that need to execute at login but not change the shell environment.
 
+compinit
+
 {
 	# Compile the completion dump to increase startup speed.
 	zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
