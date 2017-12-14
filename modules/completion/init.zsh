@@ -34,7 +34,7 @@ unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
 autoload -Uz compinit
 _comp_files=(${ZDOTDIR:-$HOME}/.zcompdump(Nm-20))
 if (( $#_comp_files )); then
-  compinit -i -C
+  compinit -i -C # removing -C may speed things up, maybe -i will too
 else
   compinit -i
 fi
@@ -70,7 +70,7 @@ zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
-zstyle ':completion:*' insert-tab pending
+# zstyle ':completion:*' insert-tab pending
 
 # Fuzzy match mistyped completions.
 zstyle ':completion:*' completer _complete _match _approximate
