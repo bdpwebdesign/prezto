@@ -13,7 +13,6 @@ fi
 
 # Add zsh-completions to $fpath.
 fpath=("${0:h}/functions" $fpath)
-# fpath=("$DOTFILES/zsh/completions" $fpath)
 
 #
 # Options
