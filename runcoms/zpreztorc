@@ -1,12 +1,9 @@
 # ZPREZTORC
 #
 # This file configures Prezto.
-#
 
 # color output
 zstyle ':prezto:*:*' color 'yes'
-# zsh modules
-zstyle ':prezto:load' zmodule 'datetime'
 # prezto modules (order matters)
 zstyle ':prezto:load' pmodule \
 	'environment' \
@@ -21,7 +18,7 @@ zstyle ':prezto:load' pmodule \
 	'git' \
 	'autosuggestions' \
 	'syntax-highlighting' \
-	'history-substring-search'
+	'history-substring-search' \
 
 # autosuggestions
 zstyle ':prezto:module:autosuggestions:color' found 'fg=black'
