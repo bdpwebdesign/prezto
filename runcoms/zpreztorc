@@ -4,11 +4,12 @@
 
 # color output
 zstyle ':prezto:*:*' color 'yes'
+# zsh functions
+zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 # prezto modules
 zstyle ':prezto:load' pmodule \
 	'environment' \
 	'terminal' \
-	'editor' \
 	'history' \
 	'directory' \
 	'colors' \
@@ -26,6 +27,12 @@ zstyle ':prezto:module:autosuggestions:color' found 'fg=black'
 # editor
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 zstyle ':prezto:module:editor' dot-expansion 'yes'
+
+# git
+zstyle ':prezto:module:git:alias' skip 'yes'
+
+# grep
+zstyle ':prezto:module:utility:grep' color 'yes'
 
 # history substring search
 zstyle ':prezto:module:history-substring-search:color' found 'fg=green'
@@ -56,7 +63,7 @@ zstyle ':prezto:module:syntax-highlighting' styles \
 	'cursor-matchingbracket' 'fg=green,bold'
 
 # terminal
-zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'always'
 
 # utility
 zstyle ':prezto:module:utility' safe-ops 'no'
