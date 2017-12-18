@@ -1,10 +1,7 @@
+# COMPLETION
 #
 # Sets completion options.
-#
-# Authors:
-#   Robby Russell <robby@planetargon.com>
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# Styling format: zstyle ':completion:function:completer:command:argument:tag'
 
 # Return if requirements are not found.
 if [[ "$TERM" == 'dumb' ]]; then
@@ -40,9 +37,6 @@ unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
 # unset _comp_files
 
 # Styles
-#
-# zstyle ':completion:function:completer:command:argument:tag'
-
 # Use caching to make completion for commands such as dpkg and apt usable.
 zstyle ':completion::complete:*' use-cache true
 zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zcompcache"
@@ -71,7 +65,7 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose true
 
 # Pasting with tabs doesn't perform completion.
-zstyle ':completion:*' insert-tab pending
+# zstyle ':completion:*' insert-tab pending
 
 # Fuzzy match mistyped completions.
 zstyle ':completion:*' completer _complete _match _approximate
