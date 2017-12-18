@@ -51,15 +51,15 @@ zstyle ':prezto:module:syntax-highlighting' styles \
 	'unknown-token' 'none' \
 	'alias' 'fg=green' \
 	'function' 'fg=blue' \
-	'path' 'fg=cyan,bold' \
-	'path_pathseparator' 'fg=white,bold' \
-	'path_prefix' 'fg=cyan,bold' \
-	'path_prefix_pathseparator' 'fg=white,bold' \
-	'globbing' 'fg=magenta,bold' \
+	'path' 'fg=yellow' \
+	'path_pathseparator' 'fg=white' \
+	'path_prefix' 'fg=yellow' \
+	'path_prefix_pathseparator' 'fg=white' \
+	'globbing' 'fg=red' \
 	'redirection' 'fg=red,bold' \
 	'bracket-error' 'fg=red,bold' \
-	'bracket-level-1' 'fg=cyan,bold' \
-	'bracket-level-2' 'fg=cyan,bold' \
+	'bracket-level-1' 'fg=yellow,bold' \
+	'bracket-level-2' 'fg=yellow,bold' \
 	'cursor-matchingbracket' 'fg=green,bold'
 
 # terminal

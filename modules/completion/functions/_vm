@@ -1,1 +1,5 @@
-/home/bdp/code/notes/.dotfiles/zsh/completions/_vm
+#compdef vm
+# ------------------------------------------------------------------------------
+# `vagrant` completions for the `vm` function.
+
+_vagrant

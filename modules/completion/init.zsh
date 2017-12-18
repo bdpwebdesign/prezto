@@ -11,13 +11,10 @@ if [[ "$TERM" == 'dumb' ]]; then
 	return 1
 fi
 
-# Add zsh-completions to $fpath.
+# Add completions to $fpath.
 fpath=("${0:h}/functions" $fpath)
 
-#
 # Options
-#
-
 setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
 setopt ALWAYS_TO_END       # Move cursor to the end of a completed word.
 setopt PATH_DIRS           # Perform path search even on command names with slashes.
@@ -42,12 +39,12 @@ unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
 # fi
 # unset _comp_files
 
-#
 # Styles
 #
+# zstyle ':completion:function:completer:command:argument:tag'
 
 # Use caching to make completion for commands such as dpkg and apt usable.
-zstyle ':completion::complete:*' use-cache on
+zstyle ':completion::complete:*' use-cache true
 zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zcompcache"
 
 # Case-insensitive (all), partial-word, and then substring completion.
@@ -61,18 +58,20 @@ fi
 
 # Group matches and describe.
 zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*:matches' group 'yes'
-zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:matches' group true
+zstyle ':completion:*:options' description true
 zstyle ':completion:*:options' auto-description '%d'
-zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
-zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
-zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
-zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
+zstyle ':completion:*:descriptions' format '%S%B%F{green} %d %f%b%s'
+zstyle ':completion:*:messages' format '%S%B%F{yellow} %d %f%b%s'
+zstyle ':completion:*:corrections' format '%S%B%F{magenta} %d (errors: %e) %f%b%s'
+zstyle ':completion:*:warnings' format '%S%B%F{red} no matches found %f%b%s'
+zstyle ':completion:*' select-prompt '%S%B%F{blue} selection: %p %f%b%s'
 zstyle ':completion:*' group-name ''
-zstyle ':completion:*' verbose yes
-# zstyle ':completion:*' insert-tab pending
+zstyle ':completion:*' verbose true
+
+# Pasting with tabs doesn't perform completion.
+zstyle ':completion:*' insert-tab pending
 
 # Fuzzy match mistyped completions.
 zstyle ':completion:*' completer _complete _match _approximate
@@ -133,11 +132,7 @@ zstyle ':completion:*:(rm|kill|diff):*' ignore-line other
 zstyle ':completion:*:rm:*' file-patterns '*:all-files'
 
 # Kill
-zstyle ':completion:*:*:*:*:processes' command 'ps -u $LOGNAME -o pid,user,command -w'
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:*:kill:*' force-list always
-zstyle ':completion:*:*:kill:*' insert-ids single
+zstyle ':completion:*:kill:*' command 'ps'
 
 # Man
 zstyle ':completion:*:manuals' separate-sections true

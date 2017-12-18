@@ -1,1 +1,5 @@
-/home/bdp/code/notes/.dotfiles/zsh/completions/_mand_manp
+#compdef mand manp
+# ------------------------------------------------------------------------------
+# `man` completions for the `mand` and `manp` functions.
+
+_man
