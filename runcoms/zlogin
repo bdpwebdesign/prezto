@@ -3,6 +3,7 @@
 # This file is sourced by login shells after zshrc.
 # It should contain commands that need to execute at login but not change the shell environment.
 
+# load completions
 [[ $OSTYPE == darwin* ]] && autoload -Uz compinit; compinit
 
 {

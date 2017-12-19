@@ -3,7 +3,7 @@
 # This file configures Prezto.
 
 # color output
-zstyle ':prezto:*:*' color 'yes'
+zstyle ':prezto:*:*' color true
 # zsh functions
 zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 # prezto modules
@@ -26,13 +26,13 @@ zstyle ':prezto:module:autosuggestions:color' found 'fg=black'
 
 # editor
 zstyle ':prezto:module:editor' key-bindings 'emacs'
-zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion true
 
 # git
-zstyle ':prezto:module:git:alias' skip 'yes'
+zstyle ':prezto:module:git:alias' skip true
 
 # grep
-zstyle ':prezto:module:utility:grep' color 'yes'
+zstyle ':prezto:module:utility:grep' color true
 
 # history substring search
 zstyle ':prezto:module:history-substring-search:color' found 'fg=green'
