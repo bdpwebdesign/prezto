@@ -8,4 +8,4 @@ if (( ! $+commands[git] )); then
 fi
 
 # Load dependencies.
-pmodload 'helper'
+# pmodload 'helper'
