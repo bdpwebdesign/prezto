@@ -20,7 +20,6 @@ source $DOTFILES/zsh/prezto/init.zsh
 source $DOTFILES/zsh/aliases
 source $DOTFILES/zsh/zle.zsh
 
-# move this to functions/init.zsh?
 # autoload compiled functions
 for fn_dir in $DOTFILES/zsh/functions/*; do
 	if [[ -d $fn_dir ]]; then
