@@ -5,9 +5,6 @@
 # Load dependencies.
 pmodload 'helper' 'spectrum'
 
-# Correct commands.
-setopt CORRECT
-
 # ls
 if is-callable 'dircolors'; then
 	# GNU Core Utilities

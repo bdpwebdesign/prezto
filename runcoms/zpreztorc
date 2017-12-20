@@ -10,8 +10,6 @@ zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 zstyle ':prezto:load' pmodule \
 	'environment' \
 	'terminal' \
-	'history' \
-	'directory' \
 	'colors' \
 	'utility' \
 	'prompt' \
@@ -27,9 +25,6 @@ zstyle ':prezto:module:autosuggestions:color' found 'fg=black'
 # editor
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 zstyle ':prezto:module:editor' dot-expansion true
-
-# git
-zstyle ':prezto:module:git:alias' skip true
 
 # grep
 zstyle ':prezto:module:utility:grep' color true
@@ -64,6 +59,3 @@ zstyle ':prezto:module:syntax-highlighting' styles \
 
 # terminal
 zstyle ':prezto:module:terminal' auto-title 'always'
-
-# utility
-zstyle ':prezto:module:utility' safe-ops 'no'

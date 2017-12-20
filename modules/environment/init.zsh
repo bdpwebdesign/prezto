@@ -3,23 +3,10 @@
 # Sets general shell options and defines environment variables.
 
 # Smart URLs
-autoload -Uz bracketed-paste-url-magic
-zle -N bracketed-paste bracketed-paste-url-magic
+autoload -Uz bracketed-paste-url-magic # bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-url-magic # bracketed-paste-magic
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
-
-# General
-setopt COMBINING_CHARS    # Combine zero-length punctuation characters (accents) with the base character.
-setopt RC_QUOTES          # Allow 'Henry''s Garage' instead of 'Henry'\''s Garage'.
-unsetopt MAIL_WARNING     # Don't print a warning message if a mail file has been accessed.
-
-# Jobs
-setopt LONG_LIST_JOBS     # List jobs in the long format by default.
-setopt AUTO_RESUME        # Attempt to resume existing job before creating a new process.
-setopt NOTIFY             # Report status of background jobs immediately.
-unsetopt BG_NICE          # Don't run all background jobs at a lower priority.
-unsetopt HUP              # Don't kill jobs on shell exit.
-unsetopt CHECK_JOBS       # Don't report on jobs when shell exit.
 
 # Termcap
 if zstyle -t ':prezto:environment:termcap' color; then
