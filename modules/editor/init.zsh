@@ -8,10 +8,6 @@ if [[ "$TERM" == 'dumb' ]]; then
 fi
 
 #
-# Options
-#
-
-#
 # Variables
 #
 

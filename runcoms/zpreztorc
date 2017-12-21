@@ -2,14 +2,17 @@
 #
 # This file configures Prezto.
 
+zmodload zsh/datetime
 # color output
 zstyle ':prezto:*:*' color true
 # zsh functions
 zstyle ':prezto:load' zfunction 'zargs' 'zmv'
+
 # prezto modules
 zstyle ':prezto:load' pmodule \
 	'environment' \
 	'terminal' \
+	'editor' \
 	'colors' \
 	'utility' \
 	'prompt' \
@@ -17,7 +20,7 @@ zstyle ':prezto:load' pmodule \
 	'autosuggestions' \
 	'syntax-highlighting' \
 	'history-substring-search' \
-	'completion' \
+	'completion'
 
 # autosuggestions
 zstyle ':prezto:module:autosuggestions:color' found 'fg=black'
@@ -37,13 +40,11 @@ zstyle ':prezto:module:history-substring-search:color' not-found 'fg=magenta'
 zstyle ':prezto:module:prompt' theme 'bdp'
 
 # syntax highlighting
-zstyle ':prezto:module:syntax-highlighting' highlighters 'main' 'brackets' 'pattern'
-zstyle ':prezto:module:syntax-highlighting' pattern 'sudo|rm' 'fg=red,bold,underline'
+zstyle ':prezto:module:syntax-highlighting' highlighters 'main' 'brackets'
 zstyle ':prezto:module:syntax-highlighting' styles \
-	'main' 'none' \
 	'builtin' 'fg=magenta' \
-	'command' 'none' \
-	'unknown-token' 'none' \
+	'command' 'fg=cyan' \
+	'unknown-token' 'fg=red' \
 	'alias' 'fg=green' \
 	'function' 'fg=blue' \
 	'path' 'fg=yellow' \

@@ -3,7 +3,7 @@
 # Defines general aliases and functions.
 
 # Load dependencies.
-pmodload 'helper' 'spectrum'
+pmodload 'helper'
 
 # ls
 if is-callable 'dircolors'; then
