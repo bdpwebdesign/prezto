@@ -2,11 +2,8 @@
 #
 # This file configures Prezto.
 
-zmodload zsh/datetime
 # color output
 zstyle ':prezto:*:*' color true
-# zsh functions
-zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 
 # prezto modules
 zstyle ':prezto:load' pmodule \
