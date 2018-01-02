@@ -22,9 +22,9 @@ source $DOTFILES/zsh/options.zsh
 # prezto
 source $DOTFILES/zsh/prezto/init.zsh
 # key bindings
-[[ $OSTYPE == linux* ]] && source $DOTFILES/zsh/zle.zsh
+[[ $OSTYPE == linux* ]] && source $DOTFILES/zsh/keybindings.zsh
 # aliases
-source $DOTFILES/zsh/aliases
+source $DOTFILES/zsh/aliases.zsh
 
 # autoload compiled functions
 for fn_dir in $DOTFILES/zsh/functions/*; do
@@ -35,9 +35,3 @@ for fn_dir in $DOTFILES/zsh/functions/*; do
 		autoload -Uwz $zwc
 	fi
 done; unset fn_dir zwc
-
-# for fns in /usr/local/Cellar/zsh/5.4.2_1/share/zsh/functions/*; do
-	# echo $fns
-	# autoload -Uz $fns
-# done; unset fns
-# source /usr/local/Cellar/zsh/5.4.2_1/share/zsh/functions/colors
