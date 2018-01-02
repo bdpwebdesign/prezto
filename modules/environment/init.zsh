@@ -3,8 +3,11 @@
 # Sets general shell options and defines environment variables.
 
 # Smart URLs
-autoload -Uz bracketed-paste-url-magic # bracketed-paste-magic
-zle -N bracketed-paste bracketed-paste-url-magic # bracketed-paste-magic
+local paster
+[[ $OSTYPE == linux* ]] && paster=bracketed-paste-magic || paster=bracketed-paste-url-magic
+autoload -Uz $paster
+zle -N bracketed-paste $paster
+unset paster
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
