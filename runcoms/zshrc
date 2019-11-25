@@ -35,3 +35,5 @@ for fn_dir in $DOTFILES/zsh/functions/*; do
 		autoload -Uwz $zwc
 	fi
 done; unset fn_dir zwc
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
