@@ -4,8 +4,8 @@
 # It should define aliases, functions, shell options, and key bindings.
 
 # export variables
-export EDITOR='subl -w'
-export VISUAL='subl -w'
+export EDITOR='vscode'
+export VISUAL='vscode'
 [[ $OSTYPE == darwin* ]] && export BROWSER='open' || export BROWSER='xdg-open'
 export PAGER='less'
 export LESS='-F -g -i -M -R -S -w'
@@ -14,6 +14,7 @@ export HISTSIZE=1000
 export SAVEHIST=1000
 export TIMEFMT=$'\n\e[0;37m%J\n\e[1;35mreal\e[00m %*Es\t\e[1;35musr\e[00m %*Us\t\e[1;35msys\e[00m %*Ss\t\e[1;35mcpu\e[00m %P'
 export DOTFILES=$HOME/code/notes/.dotfiles
+export NVM_DIR=~/.nvm
 
 # iterm
 test -e $HOME/.iterm2_shell_integration.zsh && source $HOME/.iterm2_shell_integration.zsh
@@ -25,6 +26,8 @@ source $DOTFILES/zsh/prezto/init.zsh
 [[ $OSTYPE == linux* ]] && source $DOTFILES/zsh/keybindings.zsh
 # aliases
 source $DOTFILES/zsh/aliases.zsh
+# nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # autoload compiled functions
 for fn_dir in $DOTFILES/zsh/functions/*; do
@@ -36,4 +39,4 @@ for fn_dir in $DOTFILES/zsh/functions/*; do
 	fi
 done; unset fn_dir zwc
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:$HOME/.composer/vendor/bin"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.composer/vendor/bin:/usr/local/mysql/bin:$PATH"
