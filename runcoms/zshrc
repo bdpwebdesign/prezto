@@ -6,7 +6,7 @@
 # export variables
 # export EDITOR='vscode'
 # export VISUAL='vscode'
-[[ $OSTYPE == darwin* ]] && export BROWSER='open' || export BROWSER='xdg-open'
+# [[ $OSTYPE == darwin* ]] && export BROWSER='open' || export BROWSER='xdg-open'
 export PAGER='more'
 export LESS='-F -g -i -M -R -S -w'
 export MORE='-F -g -i -M -R -S -w'
@@ -34,7 +34,7 @@ source $DOTFILES/zsh/prezto/init.zsh
 # aliases
 source $DOTFILES/zsh/aliases.zsh
 # nvm
-source $(brew --prefix nvm)/nvm.sh
+# source $(brew --prefix nvm)/nvm.sh
 
 # autoload compiled functions
 for fn_dir in $DOTFILES/zsh/functions/*; do
@@ -49,19 +49,19 @@ done; unset fn_dir zwc
 # JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-14.0.1.jdk/Contents/Home"
 # JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
 # JAVA_HOME="/usr/local/Cellar/openjdk/18.0.1"
-JAVA_HOME="/usr/local/opt/openjdk"
+# JAVA_HOME="/usr/local/opt/openjdk"
 
 # PATH="$PATH:/usr/local/opt/ruby/bin"
 # PATH="$PATH:/usr/local/lib/ruby/gems/3.1.0/bin"
-PATH="$PATH:$JAVA_HOME/bin"
+# PATH="$PATH:$JAVA_HOME/bin"
 # PATH="/usr/local/opt/openjdk/bin:$PATH"
 # PATH="$PATH:$JAVA_8_HOME"
-PATH="$PATH:$HOME/.yarn/bin"
-PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
-PATH="$PATH:$HOME/.composer/vendor/bin"
-PATH="$PATH:/usr/local/mysql/bin"
-PATH="$PATH:$HOME/.fastlane/bin"
+# PATH="$PATH:$HOME/.yarn/bin"
+# PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+# PATH="$PATH:$HOME/.composer/vendor/bin"
+# PATH="$PATH:/usr/local/mysql/bin"
+# PATH="$PATH:$HOME/.fastlane/bin"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-PATH="$PATH:$HOME/.rvm/bin"
+# PATH="$PATH:$HOME/.rvm/bin"
 
-export PATH="$PATH"
+# export PATH="$PATH"
