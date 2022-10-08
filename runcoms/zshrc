@@ -4,8 +4,8 @@
 # It should define aliases, functions, shell options, and key bindings.
 
 # export variables
-export EDITOR='vscode'
-export VISUAL='vscode'
+# export EDITOR='vscode'
+# export VISUAL='vscode'
 [[ $OSTYPE == darwin* ]] && export BROWSER='open' || export BROWSER='xdg-open'
 export PAGER='more'
 export LESS='-F -g -i -M -R -S -w'
@@ -16,6 +16,12 @@ export SAVEHIST=1000
 export TIMEFMT=$'\n\e[0;37m%J\n\e[1;35mreal\e[00m %*Es\t\e[1;35musr\e[00m %*Us\t\e[1;35msys\e[00m %*Ss\t\e[1;35mcpu\e[00m %P'
 export DOTFILES=$HOME/code/notes/.dotfiles
 export NVM_DIR=~/.nvm
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export AWS_MFA_ARN=arn:aws:iam::643633022299:mfa/brandonp@advisorinnovationlabs.com
+export CLOUDFORMATION_STACK_NAME=ailabs
+export CLOUDFORMATION_STACK_REGION=us-west-2
+# export LOCAL_IP=192.168.50.241
 
 # iterm
 test -e $HOME/.iterm2_shell_integration.zsh && source $HOME/.iterm2_shell_integration.zsh
@@ -40,6 +46,22 @@ for fn_dir in $DOTFILES/zsh/functions/*; do
 	fi
 done; unset fn_dir zwc
 
-export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-# export PATH="$JAVA_8_HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.composer/vendor/bin:/usr/local/mysql/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.composer/vendor/bin:/usr/local/mysql/bin:$PATH"
+# JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-14.0.1.jdk/Contents/Home"
+# JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+# JAVA_HOME="/usr/local/Cellar/openjdk/18.0.1"
+JAVA_HOME="/usr/local/opt/openjdk"
+
+# PATH="$PATH:/usr/local/opt/ruby/bin"
+# PATH="$PATH:/usr/local/lib/ruby/gems/3.1.0/bin"
+PATH="$PATH:$JAVA_HOME/bin"
+# PATH="/usr/local/opt/openjdk/bin:$PATH"
+# PATH="$PATH:$JAVA_8_HOME"
+PATH="$PATH:$HOME/.yarn/bin"
+PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+PATH="$PATH:$HOME/.composer/vendor/bin"
+PATH="$PATH:/usr/local/mysql/bin"
+PATH="$PATH:$HOME/.fastlane/bin"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="$PATH"
