@@ -44,7 +44,13 @@ for fn_dir in $DOTFILES/zsh/functions/*; do
 		fpath=($zwc $fpath)
 		autoload -Uwz $zwc
 	fi
-done; unset fn_dir zwc
+done
+unset fn_dir zwc
+
+# automatically run nvm use
+autoload -U add-zsh-hook
+add-zsh-hook chpwd nvm_use
+nvm_use
 
 # JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-14.0.1.jdk/Contents/Home"
 # JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
